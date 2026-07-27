@@ -24,12 +24,15 @@ class InstapaperClient:
             resource_owner_secret=qs["oauth_token_secret"][0],
         )
 
-    def list_bookmarks(self, oauth: OAuth1, folder_id: str = "unread", limit: int = 50, tag: Optional[str] = None) -> list:
-        params = {"format": "json", "folder_id": folder_id, "limit": limit}
+    def list_bookmarks(self, oauth: OAuth1, folder_id: str = "unread", limit: int = 50, offset: int = 0, tag: Optional[str] = None) -> list:
+        params = {"format": "json", "folder_id": folder_id, "limit": limit, "offset": offset}
         if tag:
             params["tag"] = tag
         r = requests.post(f"{self.BASE_URL}/bookmarks/list", params=params, auth=oauth)
-        return r.json() if r.status_code == 200 else []
+        if r.status_code != 200:
+            return []
+        data = r.json()
+        return data.get("bookmarks", []) if isinstance(data, dict) else []
 
     def get_text(self, oauth: OAuth1, bookmark_id: int) -> Optional[str]:
         r = requests.post(f"{self.BASE_URL}/bookmarks/get_text", params={"bookmark_id": bookmark_id}, auth=oauth)

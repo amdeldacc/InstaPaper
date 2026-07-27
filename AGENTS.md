@@ -103,3 +103,32 @@ Python CLI (`instapaper-cli`) to search and retrieve bookmarks from Instapaper v
 
 - Spec: `docs/superpowers/specs/2026-07-27-instapaper-cli-design.md`
 - Plan: `docs/superpowers/plans/2026-07-27-instapaper-cli-plan.md`
+
+---
+
+## AI Context Files
+
+The following files define project context for AI coding agents. Read them at session start:
+
+| File | Purpose |
+|------|---------|
+| `PRD.md` | Product requirements — what we're building and why |
+| `ARCHITECTURE.md` | Technical blueprint — how the system is built |
+| `RULES.md` | Coding constraints — boundaries the AI must not cross |
+| `PHASES.md` | Implementation plan — what to build now vs later |
+| `DESIGN.md` | Design system — UI colors, typography, spacing |
+| `MEMORY.md` | Project state — what's done, active, and next |
+| `TESTING.md` | Testing guide — strategy, critical flows, edge cases |
+| `DECISIONS.md` | Decision log — why past choices were made |
+
+**IMPORTANT:** AI agents MUST read `MEMORY.md` at session start and update it at session end.
+
+<!-- OPENWIKI:START -->
+
+## OpenWiki
+
+This repository uses OpenWiki for recurring code documentation. Start with `openwiki/quickstart.md`, then follow its links to architecture, workflows, domain concepts, operations, integrations, testing guidance, and source maps.
+
+The scheduled OpenWiki GitHub Actions workflow refreshes the repository wiki. Do not hand-edit generated OpenWiki pages unless explicitly asked; prefer updating source code/docs and letting OpenWiki regenerate.
+
+<!-- OPENWIKI:END -->

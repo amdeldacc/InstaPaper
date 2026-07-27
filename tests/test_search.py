@@ -24,3 +24,23 @@ def test_no_match():
 
 def test_case_insensitive():
     assert len(search_bookmarks(BOOKMARKS, "PYTHON")) == 2
+
+def test_search_body_match():
+    bm = [{"bookmark_id": 1, "title": "Title", "description": "Desc", "url": "https://x.com", "tags": []}]
+    assert len(search_bookmarks(bm, "quantum", bodies={1: "quantum computing"})) == 1
+
+def test_search_body_no_match():
+    bm = [{"bookmark_id": 1, "title": "Title", "description": "Desc", "url": "https://x.com", "tags": []}]
+    assert search_bookmarks(bm, "quantum", bodies={1: "nothing here"}) == []
+
+def test_search_body_case_insensitive():
+    bm = [{"bookmark_id": 1, "title": "Title", "description": "Desc", "url": "https://x.com", "tags": []}]
+    assert len(search_bookmarks(bm, "QUANTUM", bodies={1: "Quantum Computing"})) == 1
+
+def test_search_body_ignored_when_bodies_none():
+    bm = [{"bookmark_id": 1, "title": "Title", "description": "Desc", "url": "https://x.com", "tags": []}]
+    assert search_bookmarks(bm, "quantum", bodies=None) == []
+
+def test_search_body_missing_bookmark_id():
+    bm = [{"bookmark_id": 1, "title": "Title", "description": "Desc", "url": "https://x.com", "tags": []}]
+    assert search_bookmarks(bm, "quantum", bodies={2: "quantum"}) == []
