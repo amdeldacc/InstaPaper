@@ -1,92 +1,100 @@
-# Graph Report - .  (2026-07-27)
+# Graph Report - /home/piou/InstaPaper  (2026-07-27)
 
 ## Corpus Check
-- Corpus is ~9,991 words - fits in a single context window. You may not need a graph.
+- Corpus is ~8,222 words - fits in a single context window. You may not need a graph.
 
 ## Summary
-- 74 nodes · 122 edges · 8 communities (7 shown, 1 thin omitted)
-- Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 10 edges (avg confidence: 0.77)
+- 81 nodes · 119 edges · 9 communities (7 shown, 2 thin omitted)
+- Extraction: 87% EXTRACTED · 13% INFERRED · 0% AMBIGUOUS · INFERRED: 16 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
-- API Client Layer
-- Project Documentation
-- CLI Commands
-- Config Management
-- Search Module
-- Agent Workflow
-- Package Metadata
+- CLI Architecture & Design
+- Client & OAuth Auth
+- Search & Tests
+- AI Context Files
+- CLI Entrypoint & Integration
+- Config & Setup
+- OpenWiki Docs
+- Package Definition
 
 ## God Nodes (most connected - your core abstractions)
-1. `InstapaperClient` - 20 edges
-2. `instapaper-cli` - 16 edges
-3. `search_bookmarks()` - 9 edges
-4. `ai-context skill` - 9 edges
-5. `search()` - 6 edges
-6. `load()` - 6 edges
-7. `requests-oauthlib 1.3+` - 5 edges
-8. `pytest` - 5 edges
+1. `search_bookmarks()` - 14 edges
+2. `InstapaperClient` - 13 edges
+3. `AI Context Files` - 9 edges
+4. `main()` - 7 edges
+5. `Instapaper CLI Quickstart` - 7 edges
+6. `search()` - 6 edges
+7. `load()` - 6 edges
+8. `Instapaper CLI` - 6 edges
 9. `configure()` - 4 edges
 10. `save()` - 4 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `InstapaperClient` ----> `Instapaper API 1.1`  [EXTRACTED]
-  src/client.py → ARCHITECTURE.md
-- `InstapaperClient` ----> `OAuth 1.0a / xAuth`  [EXTRACTED]
-  src/client.py → ARCHITECTURE.md
-- `InstapaperClient` ----> `requests 2.28+`  [EXTRACTED]
-  src/client.py → pyproject.toml
-- `InstapaperClient` ----> `requests-oauthlib 1.3+`  [EXTRACTED]
-  src/client.py → pyproject.toml
-- `instapaper-cli` ----> `Click 8.0+`  [EXTRACTED]
-  PRD.md → pyproject.toml
+- `test_deep_search()` --indirect_call--> `main()`  [INFERRED]
+  tests/test_cli.py → src/cli.py
+- `test_deep_search_no_body_match()` --indirect_call--> `main()`  [INFERRED]
+  tests/test_cli.py → src/cli.py
+- `test_fetch_all_paginates()` --indirect_call--> `main()`  [INFERRED]
+  tests/test_cli.py → src/cli.py
+- `test_fetch_all_warns_on_mid_pagination_empty()` --indirect_call--> `main()`  [INFERRED]
+  tests/test_cli.py → src/cli.py
+- `test_search_not_configured()` --indirect_call--> `main()`  [INFERRED]
+  tests/test_cli.py → src/cli.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (8 total, 1 thin omitted)
+## Hyperedges (group relationships)
+- **CI/CD Pipeline** — github_workflows_bandit_bandit_workflow, github_workflows_openwiki_update_openwiki_workflow, github_workflows_pylint_pylint_workflow, github_workflows_python_app_python_app_workflow [INFERRED 0.95]
+- **AI Context Files System** — docs_superpowers_plans_2026_07_27_ai_context_files_plan_ai_context_files, docs_superpowers_plans_2026_07_27_ai_context_files_plan_prd_template, docs_superpowers_plans_2026_07_27_ai_context_files_plan_architecture_template, docs_superpowers_plans_2026_07_27_ai_context_files_plan_rules_template, docs_superpowers_plans_2026_07_27_ai_context_files_plan_phases_template, docs_superpowers_plans_2026_07_27_ai_context_files_plan_design_template, docs_superpowers_plans_2026_07_27_ai_context_files_plan_memory_template, docs_superpowers_plans_2026_07_27_ai_context_files_plan_testing_template, docs_superpowers_plans_2026_07_27_ai_context_files_plan_decisions_template [EXTRACTED 1.00]
+- **Instapaper CLI Package** — docs_superpowers_plans_2026_07_27_instapaper_cli_plan_instapaper_cli, docs_superpowers_plans_2026_07_27_instapaper_cli_plan_config_module, docs_superpowers_plans_2026_07_27_instapaper_cli_plan_client_module, docs_superpowers_plans_2026_07_27_instapaper_cli_plan_search_module, docs_superpowers_plans_2026_07_27_instapaper_cli_plan_cli_module [EXTRACTED 1.00]
 
-### Community 0 - "API Client Layer"
-Cohesion: 0.20
-Nodes (11): oauth/access_token, bookmarks/get_text, bookmarks/list, folders/list, OAuth1, requests 2.28+, requests-oauthlib 1.3+, InstapaperClient (+3 more)
+## Communities (9 total, 2 thin omitted)
 
-### Community 1 - "Project Documentation"
-Cohesion: 0.23
-Nodes (6): Instapaper API 1.1, ai-context skill, graphify, instapaper-cli, setuptools >=64, ~/templates/ai-context/
+### Community 0 - "CLI Architecture & Design"
+Cohesion: 0.11
+Nodes (20): CLI Module (src/cli.py), InstapaperClient Module (src/client.py), Config Module (src/config.py), Instapaper CLI, Search Module (src/search.py), Client-side Search Pattern, Instapaper CLI Design Spec, OAuth 1.0a xAuth Flow (+12 more)
 
-### Community 2 - "CLI Commands"
-Cohesion: 0.20
-Nodes (9): OAuth 1.0a / xAuth, Click 8.0+, Client-side substring search, instapaper configure, instapaper search, configure(), main(), Set up API credentials and authenticate. (+1 more)
+### Community 1 - "Client & OAuth Auth"
+Cohesion: 0.26
+Nodes (8): OAuth1, Search your Instapaper bookmarks., search(), InstapaperClient, test_client_initialization(), test_get_text_returns_none_on_failure(), test_list_bookmarks_with_offset(), test_list_folders_returns_list()
 
-### Community 3 - "Config Management"
-Cohesion: 0.29
-Nodes (9): ~/.instapaper/config.toml, Search your Instapaper bookmarks., search(), load(), save(), test_load_nonexistent_config(), test_load_returns_dict(), test_save_and_load_config() (+1 more)
+### Community 2 - "Search & Tests"
+Cohesion: 0.27
+Nodes (12): search_bookmarks(), test_case_insensitive(), test_matches_description(), test_matches_tag(), test_matches_title(), test_matches_url(), test_no_match(), test_search_body_case_insensitive() (+4 more)
 
-### Community 4 - "Search Module"
-Cohesion: 0.31
-Nodes (9): pytest, requests_mock, search_bookmarks(), test_case_insensitive(), test_matches_description(), test_matches_tag(), test_matches_title(), test_matches_url() (+1 more)
+### Community 3 - "AI Context Files"
+Cohesion: 0.18
+Nodes (11): AI Context Files, ARCHITECTURE.md Template, DECISIONS.md Template, DESIGN.md Template, MEMORY.md Template, PHASES.md Template, PRD.md Template, RULES.md Template (+3 more)
 
-### Community 5 - "Agent Workflow"
-Cohesion: 0.29
-Nodes (6): AI Context Files system, caveman skill, rtk (rust token killer), subagent-driven-development, Superpowers skills framework, writing-plans
+### Community 4 - "CLI Entrypoint & Integration"
+Cohesion: 0.39
+Nodes (6): main(), test_deep_search(), test_deep_search_no_body_match(), test_fetch_all_paginates(), test_fetch_all_warns_on_mid_pagination_empty(), test_search_not_configured()
+
+### Community 5 - "Config & Setup"
+Cohesion: 0.39
+Nodes (7): configure(), Set up API credentials and authenticate., load(), save(), test_load_nonexistent_config(), test_load_returns_dict(), test_save_and_load_config()
 
 ## Knowledge Gaps
-- **13 isolated node(s):** `instapaper-cli`, `requests_mock`, `~/.instapaper/config.toml`, `setuptools >=64`, `~/templates/ai-context/` (+8 more)
+- **19 isolated node(s):** `instapaper-cli`, `Bandit Security Scanner`, `OpenWiki Documentation Generator`, `Pylint Linter`, `Flake8 Linter` (+14 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `instapaper-cli` connect `Project Documentation` to `API Client Layer`, `CLI Commands`, `Config Management`, `Search Module`, `Agent Workflow`?**
-  _High betweenness centrality (0.424) - this node is a cross-community bridge._
-- **Why does `InstapaperClient` connect `API Client Layer` to `Project Documentation`, `CLI Commands`, `Config Management`?**
-  _High betweenness centrality (0.306) - this node is a cross-community bridge._
-- **Why does `pytest` connect `Search Module` to `API Client Layer`, `Project Documentation`, `Config Management`?**
-  _High betweenness centrality (0.172) - this node is a cross-community bridge._
+- **Why does `search()` connect `Client & OAuth Auth` to `Search & Tests`, `CLI Entrypoint & Integration`, `Config & Setup`?**
+  _High betweenness centrality (0.147) - this node is a cross-community bridge._
+- **Why does `search_bookmarks()` connect `Search & Tests` to `Client & OAuth Auth`?**
+  _High betweenness centrality (0.118) - this node is a cross-community bridge._
+- **Why does `InstapaperClient` connect `Client & OAuth Auth` to `Config & Setup`?**
+  _High betweenness centrality (0.086) - this node is a cross-community bridge._
 - **Are the 2 inferred relationships involving `InstapaperClient` (e.g. with `configure()` and `search()`) actually correct?**
   _`InstapaperClient` has 2 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 3 inferred relationships involving `OAuth1` (e.g. with `search()` and `test_get_text_returns_none_on_failure()`) actually correct?**
-  _`OAuth1` has 3 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `instapaper-cli`, `requests_mock`, `~/.instapaper/config.toml` to the rest of the system?**
-  _13 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Are the 4 inferred relationships involving `OAuth1` (e.g. with `search()` and `test_get_text_returns_none_on_failure()`) actually correct?**
+  _`OAuth1` has 4 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 5 inferred relationships involving `main()` (e.g. with `test_deep_search()` and `test_deep_search_no_body_match()`) actually correct?**
+  _`main()` has 5 INFERRED edges - model-reasoned connections that need verification._
+- **What connects `instapaper-cli`, `Bandit Security Scanner`, `OpenWiki Documentation Generator` to the rest of the system?**
+  _19 weakly-connected nodes found - possible documentation gaps or missing edges._
