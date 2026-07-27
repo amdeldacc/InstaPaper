@@ -1,0 +1,14 @@
+/home/piou/InstaPaper/AGENTS.md
+/home/piou/InstaPaper/ARCHITECTURE.md
+/home/piou/InstaPaper/DECISIONS.md
+/home/piou/InstaPaper/DESIGN.md
+/home/piou/InstaPaper/MEMORY.md
+/home/piou/InstaPaper/PHASES.md
+/home/piou/InstaPaper/PRD.md
+/home/piou/InstaPaper/README.md
+/home/piou/InstaPaper/RULES.md
+/home/piou/InstaPaper/TESTING.md
+/home/piou/InstaPaper/docs/superpowers/plans/2026-07-27-ai-context-files-plan.md
+/home/piou/InstaPaper/docs/superpowers/plans/2026-07-27-instapaper-cli-plan.md
+/home/piou/InstaPaper/docs/superpowers/specs/2026-07-27-ai-context-files-design.md
+/home/piou/InstaPaper/docs/superpowers/specs/2026-07-27-instapaper-cli-design.md

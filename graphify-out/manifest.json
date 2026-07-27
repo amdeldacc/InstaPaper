@@ -1,0 +1,127 @@
+{
+  "pyproject.toml": {
+    "mtime": 1785141579.719606,
+    "ast_hash": "3dfd0cf30e348a23954aa4cce2c1a417",
+    "semantic_hash": "3dfd0cf30e348a23954aa4cce2c1a417"
+  },
+  "src/__init__.py": {
+    "mtime": 1785141391.6072812,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "src/__main__.py": {
+    "mtime": 1785141587.2418022,
+    "ast_hash": "f80a6cf988b1b5a3a14003458260e56a",
+    "semantic_hash": "f80a6cf988b1b5a3a14003458260e56a"
+  },
+  "src/cli.py": {
+    "mtime": 1785144224.1188364,
+    "ast_hash": "faea47a830775f7401c0372a5e6bd3f0",
+    "semantic_hash": "faea47a830775f7401c0372a5e6bd3f0"
+  },
+  "src/client.py": {
+    "mtime": 1785143878.4209275,
+    "ast_hash": "425bddcc76e702a2998b25197b5711ba",
+    "semantic_hash": "425bddcc76e702a2998b25197b5711ba"
+  },
+  "src/config.py": {
+    "mtime": 1785141422.62547,
+    "ast_hash": "67f3864c322dec65435c49106288c619",
+    "semantic_hash": "67f3864c322dec65435c49106288c619"
+  },
+  "src/search.py": {
+    "mtime": 1785144198.529605,
+    "ast_hash": "a8f6964e46de8cc05d1521274381cbe4",
+    "semantic_hash": "a8f6964e46de8cc05d1521274381cbe4"
+  },
+  "tests/test_cli.py": {
+    "mtime": 1785143184.0619636,
+    "ast_hash": "5cbc84d15843fd850f07440729a684fb",
+    "semantic_hash": "5cbc84d15843fd850f07440729a684fb"
+  },
+  "tests/test_client.py": {
+    "mtime": 1785141457.0586138,
+    "ast_hash": "5a30f5caa58455606e500236422962c1",
+    "semantic_hash": "5a30f5caa58455606e500236422962c1"
+  },
+  "tests/test_config.py": {
+    "mtime": 1785141395.295766,
+    "ast_hash": "e64c0035caa25428dac0863f553fc925",
+    "semantic_hash": "e64c0035caa25428dac0863f553fc925"
+  },
+  "tests/test_search.py": {
+    "mtime": 1785141478.83557,
+    "ast_hash": "e25681465e77f311a074c71feba97633",
+    "semantic_hash": "e25681465e77f311a074c71feba97633"
+  },
+  "AGENTS.md": {
+    "mtime": 1785145364.9897172,
+    "ast_hash": "809c59369a50a231dd64148bac4d5460",
+    "semantic_hash": "809c59369a50a231dd64148bac4d5460"
+  },
+  "ARCHITECTURE.md": {
+    "mtime": 1785146089.6571152,
+    "ast_hash": "b81b5d7f1b489b7f07d6d793e6676e71",
+    "semantic_hash": "b81b5d7f1b489b7f07d6d793e6676e71"
+  },
+  "DECISIONS.md": {
+    "mtime": 1785146116.4137912,
+    "ast_hash": "af9cb2b6a3a0463b32a98b6d69cf4772",
+    "semantic_hash": "af9cb2b6a3a0463b32a98b6d69cf4772"
+  },
+  "DESIGN.md": {
+    "mtime": 1785146101.7020326,
+    "ast_hash": "3f2a65d5642339471bb3eb7644149b42",
+    "semantic_hash": "3f2a65d5642339471bb3eb7644149b42"
+  },
+  "MEMORY.md": {
+    "mtime": 1785146105.8424325,
+    "ast_hash": "4b238ada98f29a6190cda16e1ca6f3be",
+    "semantic_hash": "4b238ada98f29a6190cda16e1ca6f3be"
+  },
+  "PHASES.md": {
+    "mtime": 1785146100.6108325,
+    "ast_hash": "176a00ca73c848c7862da6f66f31f231",
+    "semantic_hash": "176a00ca73c848c7862da6f66f31f231"
+  },
+  "PRD.md": {
+    "mtime": 1785146082.1921318,
+    "ast_hash": "8e3dde308959e2bc3ecd8083cf581fce",
+    "semantic_hash": "8e3dde308959e2bc3ecd8083cf581fce"
+  },
+  "README.md": {
+    "mtime": 1785141517.1853642,
+    "ast_hash": "c205d45d83f5d86571504767c83b5c35",
+    "semantic_hash": "c205d45d83f5d86571504767c83b5c35"
+  },
+  "RULES.md": {
+    "mtime": 1785146095.9525442,
+    "ast_hash": "d4675f287e292f154924c803b139bf6f",
+    "semantic_hash": "d4675f287e292f154924c803b139bf6f"
+  },
+  "TESTING.md": {
+    "mtime": 1785146110.723129,
+    "ast_hash": "6c7c741dd4c5d4b0cec7e41c8975741c",
+    "semantic_hash": "6c7c741dd4c5d4b0cec7e41c8975741c"
+  },
+  "docs/superpowers/plans/2026-07-27-ai-context-files-plan.md": {
+    "mtime": 1785144962.8491962,
+    "ast_hash": "15f91e43438eb0d5214bfba27553512a",
+    "semantic_hash": "15f91e43438eb0d5214bfba27553512a"
+  },
+  "docs/superpowers/plans/2026-07-27-instapaper-cli-plan.md": {
+    "mtime": 1785140738.3082628,
+    "ast_hash": "e9d33bd2d71fca75e79130704a314204",
+    "semantic_hash": "e9d33bd2d71fca75e79130704a314204"
+  },
+  "docs/superpowers/specs/2026-07-27-ai-context-files-design.md": {
+    "mtime": 1785144916.8861299,
+    "ast_hash": "5e93368576f12db13056dc7df5f04b13",
+    "semantic_hash": "5e93368576f12db13056dc7df5f04b13"
+  },
+  "docs/superpowers/specs/2026-07-27-instapaper-cli-design.md": {
+    "mtime": 1785140714.166312,
+    "ast_hash": "54b0b429096cdc184cbfc72b251efe4a",
+    "semantic_hash": "54b0b429096cdc184cbfc72b251efe4a"
+  }
+}
