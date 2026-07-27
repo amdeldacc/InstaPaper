@@ -5,6 +5,7 @@ __pycache__/
 dist/
 build/
 AGENTS.md
+CLAUDE.md
 MEMORY.md
 PHASES.md
 PRD.md
