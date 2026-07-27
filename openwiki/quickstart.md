@@ -60,16 +60,16 @@ instapaper search rust --folder all --fetch-all --deep
 
 ## Architecture at a Glance
 
-<!-- openwiki: mermaid parse failed and this diagram was converted to a text fence so it does not break rendering. Fix the diagram source and restore the mermaid fence. Parser error: Heuristic: an unescaped angle bracket inside a label breaks rendering; rephrase the label. -->
-```text
+```mermaid
 flowchart LR
-    Terminal --> CLI[src/cli.py<br/>Click group]
-    CLI -->|load| Config[~/.instapaper/config.toml]
-    CLI -->|list_bookmarks / get_text| Client[src/client.py<br/>InstapaperClient]
-    Client -->|OAuth 1.0a xAuth + HTTPS| API[(api.instapaper.com/1.1)]
-    CLI -->|search_bookmarks| Search[src/search.py<br/>client-side match]
-    Search --> Results[CLI output / JSON / --text]
+    Terminal --> CLI["src/cli.py — Click group"]
+    CLI -->|load| Config["~/.instapaper/config.toml"]
+    CLI -->|list_bookmarks / get_text| Client["src/client.py — InstapaperClient"]
+    Client -->|OAuth 1.0a xAuth + HTTPS| API[("api.instapaper.com/1.1")]
+    CLI -->|search_bookmarks| Search["src/search.py — client-side match"]
+    Search --> Results["CLI output / JSON / --text"]
 ```
+*Caption: request path from terminal through CLI, client, and local search to results.*
 
 - **Entry**: `src/cli.py` — Click group with `configure` and `search` commands
 - **Config**: `src/config.py` — TOML at `~/.instapaper/config.toml` (chmod 600)
@@ -83,6 +83,29 @@ flowchart LR
 - **xAuth**: Email/password exchange for OAuth tokens (no browser redirect)
 - **Folders**: `unread`, `starred`, `archive`, or custom folder names
 - **Deep search**: `--deep` fetches full article text via `bookmarks/get_text` (1 API call per result)
+
+## Continuous Integration
+
+Four GitHub Actions workflows live under `.github/workflows/`:
+
+| Workflow | Trigger | What it runs |
+|----------|---------|--------------|
+| `python-app.yml` | push / PR to `main` | installs the package + `requests-mock`, runs `flake8` (syntax + complexity checks, `--exit-zero`) and `pytest` on Python 3.10 |
+| `pylint.yml` | push | runs `pylint --exit-zero` over all tracked `*.py` files on Python 3.10 |
+| `bandit.yml` | push / PR to `main` + weekly cron (Thu 05:36 UTC) | Bandit security scan, uploads SARIF to the Security tab (`exit_zero: true`) |
+| `openwiki-update.yml` | `workflow_dispatch` + daily cron (08:00 UTC) | runs `openwiki code --update --print` and opens a `docs: update OpenWiki` PR via `peter-evans/create-pull-request` |
+
+All lint workflows use `--exit-zero`, so findings surface as warnings rather than blocking merges.
+
+## Repository Layout
+
+Beyond the source tree, the repo contains scaffolding that is generated or local-only and therefore not part of the runtime:
+
+- `src/`, `tests/`, `pyproject.toml` — the installable package and its tests
+- `docs/superpowers/{plans,specs}/` — dated design and plan documents (e.g. the 2026-07-27 AI context files design)
+- `graphify-out/` — generated dependency graph cache (manifest, `GRAPH_REPORT.md`, `graph.html`/`graph.json`); safe to delete and regenerate
+- `.github/workflows/` — the four CI workflows listed above
+- **Local-only context files** (listed in `.gitignore`): `AGENTS.md`, `CLAUDE.md`, `MEMORY.md`, `PHASES.md`, `PRD.md`, `TESTING.md`, `ARCHITECTURE.md`, `RULES.md`, `DECISIONS.md`, `DESIGN.md`. These may exist on individual checkouts for AI-agent context but are not tracked.
 
 ## Next Steps
 
