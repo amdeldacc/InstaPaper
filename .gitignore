@@ -4,4 +4,9 @@ __pycache__/
 *.egg-info/
 dist/
 build/
-*.md
+AGENTS.md
+MEMORY.md
+PHASES.md
+PRD.md
+README.md
+TESTING.md
