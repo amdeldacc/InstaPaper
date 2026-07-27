@@ -7,6 +7,17 @@ def test_client_initialization():
     assert client.consumer_key == "test_key"
     assert client.consumer_secret == "test_secret"
 
+def test_list_bookmarks_with_offset(requests_mock):
+    requests_mock.post(
+        "https://www.instapaper.com/api/1.1/bookmarks/list",
+        json={"bookmarks": [{"bookmark_id": 1, "title": "Test"}]},
+    )
+    client = InstapaperClient("k", "s")
+    oauth = OAuth1("k", client_secret="s")
+    result = client.list_bookmarks(oauth, offset=100)
+    assert "offset=100" in requests_mock.last_request.url
+    assert len(result) == 1
+
 def test_get_text_returns_none_on_failure(requests_mock):
     requests_mock.post("https://www.instapaper.com/api/1.1/bookmarks/get_text", status_code=400)
     client = InstapaperClient("k", "s")
